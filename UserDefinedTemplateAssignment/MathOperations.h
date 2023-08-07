@@ -1,4 +1,9 @@
-
+/*
+Author - Isaac Richards
+Date - 06AUG23
+Assignment - Standard Template Library Assignment
+Description - Basic math operations that can be used with the calculator program.
+*/
 
 #pragma once
 

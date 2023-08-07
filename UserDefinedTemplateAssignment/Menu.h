@@ -5,6 +5,8 @@ Assignment - Object Oriented Math Library Program
 Description - Menu for the Math Library Program.  This menu is a Python to C++ port of the menu from my assignments from CMIT-135-40B.
     The menu lists available options for functions to perform on a list of numbers.  The user can select an option by entering the number for
     the desired function.  Each entry from the user is checked for validity.  The user will continue to be prompted until a valid entry is made.
+
+Update 06AUG23 - Removed specific functions for the Math Library Program and Quit, and added the get_t_input() function.
 */
 
 #pragma once
@@ -16,16 +18,6 @@ Description - Menu for the Math Library Program.  This menu is a Python to C++ p
 using namespace std;
 
 #pragma region GeneralMenuFunctions
-
-/*
-/// <summary>
-/// Gets an value from the user.  Only supports binary, integers, and float 
-/// </summary>
-/// <param name="prompt"></param>
-/// <returns></returns>
-template <typename T>
-T get_t_input(const string& prompt, bool binary);
-*/
 
 /// <summary>
 /// Lists each of the options in option_list and prompts the user to select one.
@@ -142,29 +134,17 @@ string join(const vector<string>& list_strings, const string& separator = "\n");
 void stop_running();
 */
 
-/*
+/// <summary>
+/// Gets a value from the user depending on the template type.  Only supports binary, integer, and float.
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="prompt"></param>
+/// <param name="binary"></param>
+/// <returns></returns>
 template<typename T>
 T get_t_input(const string& prompt, bool binary) {
-    if (std::is_same_v<T, float>) {
-        return static_cast<T>(get_float_input(prompt));
-    }
-    else if (std::is_same_v<T, int>) {
-        return static_cast<T>(get_integer_input(prompt));
-    }
-    else if (std::is_same_v<T, bool>) {
-        return static_cast<T>(get_binary_input(prompt));
-    }
-    else {
-        cout << "Invalid type." << endl;
-        return T();
-    }
+    //Declared here because I was getting a linker error when it was defined in the cpp file, and couldn't find a way to fix it.
 
-    return T();
-}
-*/
-
-template<typename T>
-T get_t_input(const string& prompt, bool binary) {
     if (std::is_same_v<T, float>) {
         return get_float_input(prompt);
     }
@@ -180,8 +160,6 @@ T get_t_input(const string& prompt, bool binary) {
         cout << "Invalid type." << endl;
         return T();
     }
-
-    return T();
 }
 
 #pragma endregion

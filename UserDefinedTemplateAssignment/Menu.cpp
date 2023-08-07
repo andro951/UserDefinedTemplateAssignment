@@ -5,6 +5,8 @@ Assignment - Object Oriented Math Library Program
 Description - Menu for the Math Library Program.  This menu is a Python to C++ port of the menu from my assignments from CMIT-135-40B.
     The menu lists available options for functions to perform on a list of numbers.  The user can select an option by entering the number for
     the desired function.  Each entry from the user is checked for validity.  The user will continue to be prompted until a valid entry is made.
+
+Update 06AUG23 - Removed specific functions for the Math Library Program and Quit, and added the get_t_input() function.
 */
 
 #include <iostream>
@@ -262,13 +264,3 @@ void stop_running() {
 */
 
 #pragma endregion
-
-/*
-vector<Function> functions = {
-    Function("Enter Scores", *enter_scores),
-    Function("Print Scores", *print_scores),
-    Function("Clear Scores", *clear_scores),
-    Function("Score Stats", *score_stats),
-    Function("Quit program", *stop_running)
-};
-*/

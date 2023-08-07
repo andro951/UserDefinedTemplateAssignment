@@ -22,12 +22,15 @@ public:
 	StoredValue(StoredType value) : value(value) {};
 	StoredType GetValue() { return value; }
 	void SetValue(StoredType newValue) { value = newValue; }
+
+	//Perform the operation between the value and otherValue and stores the result in value, then returns the new value.
 	template <typename OtherType>
 	StoredType PerformOperation(OtherType otherValue, StoredType (*operation)(StoredType, StoredType)) {
 		value = operation(value, static_cast<StoredType>(otherValue));
 		return GetValue();
 	}
 
+	//List of available operations for the user to select, and the prompt to display to the user when they select the operation.
 	std::vector<std::pair<Function<StoredType>, std::string>> operations = {
 		{ Function<StoredType>("Clear", Clear<StoredType>), "Please enter a new value: " },
 		{ Function<StoredType>("+", Add<StoredType>), "Please enter a value to add: " },

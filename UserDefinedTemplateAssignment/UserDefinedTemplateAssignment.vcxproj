@@ -132,7 +132,7 @@
     <ClCompile Include="UserDefinedTemplate.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Calculator.h" />
+    <ClInclude Include="CalculatorFunctions.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="MathOperations.h" />
     <ClInclude Include="Menu.h" />
